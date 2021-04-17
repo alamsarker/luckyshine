@@ -1,0 +1,40 @@
+version: '3.5'
+
+networks:
+  basic:
+    driver: bridge
+    name: lucky-shine-api
+
+volumes:
+  db:
+    driver: local
+
+services:
+  lucky-shine-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lucky-shine-api
+    container_name: lucky-shine-api
+    links:
+      - db
+    ports:
+      - "${API_PORT}:7000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - basic
+  db:
+    networks:
+      - basic
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: luckyshine
+      MYSQL_DATABASE: luckyshine
+      MYSQL_USER: luckyshine
+      MYSQL_PASSWORD: luckyshine
+    volumes:
+      - "./data/mysql:/var/lib/mysql"

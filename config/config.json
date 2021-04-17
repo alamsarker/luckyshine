@@ -1,0 +1,37 @@
+{
+  "development": {
+    "username": "luckyshine",
+    "password": "luckyshine",
+    "database": "luckyshine",
+    "host": "db",
+    "dialect": "mysql",
+    "logging": false,
+    "define": {
+      "underscored": true,
+      "timestamps": false
+    }
+  },
+  "test": {
+    "username": "luckyshine",
+    "password": "luckyshine",
+    "database": "luckyshine",
+    "logging": false,
+    "host": "db",
+    "dialect": "mysql",
+    "define": {
+      "underscored": true,
+      "timestamps": false
+    }
+  },
+  "production": {
+    "username": "luckyshine",
+    "password": "luckyshine",
+    "database": "luckyshine",
+    "host": "db",
+    "dialect": "mysql",
+    "define": {
+      "underscored": true,
+      "timestamps": false
+    }
+  }
+}
